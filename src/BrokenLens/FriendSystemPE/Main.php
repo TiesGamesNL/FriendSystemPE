@@ -39,6 +39,7 @@ class Main extends PluginBase implements Listener{
 	}
 	
 	public function onJoin(PlayerJoinEvent $ev){
+		// To Noob Developers: This part means if you join the server. Whoever you added will still be in your friendslist.
 		if (!file_exists($this->getDataFolder()."players/".$ev->getPlayer()->getName().".yml")){
 			$config = new Config($this->getDataFolder()."players/".strtolower($ev->getPlayer()->getName()).".yml", Config::YAML);
 			$config->set("friends", array());
