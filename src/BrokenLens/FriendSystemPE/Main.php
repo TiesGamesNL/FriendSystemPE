@@ -49,10 +49,12 @@ class Main extends PluginBase implements Listener{
 	// Commmands for FriendsSystem
 	public function onCommand(CommandSender $sender,Command $command, $label,array $args){
 		switch($command->getName()){
+			// Main Command
 			case "friend":
 			if ($sender instanceof Player){
 			if (isset($args[0])){
 				switch ($args[0]){
+					// Add Command
 					case "add":
 						if ($sender->hasPermission("friend.add")){
 						if (isset($args[1])){
@@ -60,7 +62,7 @@ class Main extends PluginBase implements Listener{
 							if(!$player == null){
 								$this->addRequest($player, $sender);
 							}	else {
-								$sender->sendMessage(TextFormat::RED."Player not found");
+								$sender->sendMessage(TextFormat::RED."Player not found"); 
 							}
 						}
 						return ;
@@ -68,6 +70,7 @@ class Main extends PluginBase implements Listener{
 							$sender->sendMessage(TextFormat::RED."You do not have permission for that command");
 						}
 					break;
+					// Remove Command
 					case "remove":
 						if ($sender->hasPermission("friend.remove")){
 						if (isset($args[1])){
@@ -84,6 +87,7 @@ class Main extends PluginBase implements Listener{
 							$sender->sendMessage(TextFormat::RED."You do not have permission for that command");
 						}
 					break;
+					// List Command
 					case "list":
 						if ($sender->hasPermission("friend.list")){
 						$config = new Config($this->getDataFolder()."players/". strtolower($sender->getName()).".yml", Config::YAML);
@@ -103,6 +107,7 @@ class Main extends PluginBase implements Listener{
 		$sender->sendMessage("Must use command in-game");
 	}
 			break;
+			// Accept Command
 			case "accept":
 				if ($sender->hasPermission("friend.accept")){
 				if (in_array($sender->getName(), $this->request)){
