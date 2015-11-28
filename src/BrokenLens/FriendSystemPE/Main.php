@@ -14,7 +14,7 @@ use pocketmine\event\entity\EntityDamageEvent;
 class Main extends PluginBase implements Listener{
 	public $request = array();
 	public function onEnable(){
-		$this->getLogger()->info("Loaded!");
+		$this->getLogger()->info("[FriendSystemPE] Added!"); // To Noob Developers: When the plugin is loaded it will show up this message.
 		// To Noob Developers: Make sure if you want to do for example PlayerInteractEvent you have to do the code below.
 		$this->getServer()->getPluginManager()->registerEvents($this ,$this);
 		@mkdir($this->getDataFolder());
