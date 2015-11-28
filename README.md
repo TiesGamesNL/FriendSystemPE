@@ -4,6 +4,6 @@
 Friend's plugin for pocket edition! - Made by CavinMiana
 
 Commands for Plugin:
-/friend - Main Command!
+see plugin.yml.
 
 Enjoy!
