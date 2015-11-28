@@ -64,6 +64,9 @@ class Main extends PluginBase implements Listener{
 							}	else {
 								$sender->sendMessage(TextFormat::RED."Player not found"); 
 							}
+						}else{
+							$sender->sendMessage("Usage: /friend add [name]");
+						}
 						}
 						return ;
 						}{
@@ -79,8 +82,6 @@ class Main extends PluginBase implements Listener{
 							}else{
 								$sender->sendMessage("Friend not found do /friend list \n to list your friends");
 							}
-						}else{
-							$sender->sendMessage("Usage: /friend remove [name]");
 						}
 						return ;
 						}else{
@@ -95,6 +96,9 @@ class Main extends PluginBase implements Listener{
 						$sender->sendMessage(TextFormat::GOLD.TextFormat::BOLD."Friends:");
 						foreach ($array as $friendname){
 							$sender->sendMessage(TextFormat::GREEN."* ".$friendname);
+						}
+						}else{
+							$sender->sendMessage("Usage: /friend list");
 						}
 						return ;
 						}else {
@@ -125,6 +129,9 @@ class Main extends PluginBase implements Listener{
 				}else{
 					$sender->sendMessage("No pending friend requests");
 				}
+				}else{
+					$sender->sendMessage("Usage: /friend accept");
+				}
 				return ;
 				}else{
 					$sender->sendMessage(TextFormat::RED."You do not have permission for that command");
@@ -145,7 +152,7 @@ class Main extends PluginBase implements Listener{
  		$this->getServer()->getScheduler()->scheduleDelayedTask($task, 20*10);
  		return ;
 		}else{
-			$requestp->sendMessage("That player is already your friend :)");
+			$requestp->sendMessage(TextFormat::GREEN."That player is already your friend :)");
 		}
 	}
 	// To Noob Developers: If the person does not accept the request, it will now remove the request.
