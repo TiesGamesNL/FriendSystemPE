@@ -135,12 +135,13 @@ class Main extends PluginBase implements Listener{
 	
 	// API for FriendsSystem
 	public function addRequest(Player $target,Player $requestp){
+		// To Noob Developers: This right here will trigger a request. If the request is not accepted in 10 secs(20 * 10 20 ticks is 1 sec), The request will be canceled.
 		if (!$this->isFriend($requestp, $target->getName())){
 		$requestp->sendMessage("Sent request to ".$target->getName());
 		$this->request[$requestp->getName()] = $target->getName();
 		$target->sendMessage(TextFormat::GREEN.$requestp->getName()." has requested you as a friend do /accept to accept or ignore to ignore");
 		echo var_dump($this->request);
- 		$task = new cancelrequest($this, $target, $requestp);
+ 		$task = new Task($this, $target, $requestp);
  		$this->getServer()->getScheduler()->scheduleDelayedTask($task, 20*10);
  		return ;
 		}else{
