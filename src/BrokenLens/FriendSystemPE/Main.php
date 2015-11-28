@@ -22,6 +22,7 @@ class Main extends PluginBase implements Listener{
 	}
 	// Events for FriendsSystem
 	public function onDamageByPlayer(EntityDamageEvent $ev){
+		// To Noob Developers: If you don't know what this part mean basically it's where if you get hit by a friend it will just block the damage and it will send an message.
 		$cause = $ev->getCause();
 		switch ($cause){
 		case EntityDamageEvent::CAUSE_ENTITY_ATTACK:
