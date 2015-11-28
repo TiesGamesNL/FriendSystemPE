@@ -157,7 +157,7 @@ class Main extends PluginBase implements Listener{
 			unset($this->request[$requestp->getName()]);
 		}
 	}
-	
+	// To Noob Developers: Its bascally like addRequest but if the person does not accept the request no worrys :) it will still be in your friendsList
 	public function addFriend(Player $player,Player $friend){
 		$player->sendMessage("added friend".$friend->getName());
 		$friend->sendMessage("added friend ".$player->getName());
