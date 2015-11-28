@@ -148,7 +148,7 @@ class Main extends PluginBase implements Listener{
 			$requestp->sendMessage("That player is already your friend :)");
 		}
 	}
-	
+	// To Noob Developers: If the person does not accept the request, it will now remove the request.
 	public function removeRequest(Player $target,Player $requestp, $reason){
 		if (in_array($target->getName(), $this->request)){
 			if ($reason == 0){
