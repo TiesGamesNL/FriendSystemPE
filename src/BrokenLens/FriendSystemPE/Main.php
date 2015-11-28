@@ -15,6 +15,7 @@ class Main extends PluginBase implements Listener{
 	public $request = array();
 	public function onEnable(){
 		$this->getLogger()->info("Loaded!");
+		// To Noob Developers: Make sure if you want to do for example PlayerInteractEvent you have to do the code below.
 		$this->getServer()->getPluginManager()->registerEvents($this ,$this);
 		@mkdir($this->getDataFolder());
 		@mkdir($this->getDataFolder()."players/");
