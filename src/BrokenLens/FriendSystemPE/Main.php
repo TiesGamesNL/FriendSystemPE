@@ -168,7 +168,7 @@ class Main extends PluginBase implements Listener{
 		$config->save();
 		$this->removeRequest($friend, $player, 1);
 	}
-	
+	// To Noob Developers: Now your removing a friend from your friendslist
 	public function removeFriend(Player $player, $friendname){
 		if ($this->isFriend($player, $friendname)){
 			$config = new Config($this->getDataFolder()."players/". strtolower($player->getName()).".yml", Config::YAML);
