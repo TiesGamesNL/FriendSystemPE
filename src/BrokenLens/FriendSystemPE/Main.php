@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener{
 		@mkdir($this->getDataFolder());
 		@mkdir($this->getDataFolder()."players/");
 	}
-	// Events for FriendsSystem
+	// Events for FriendSystemPE
 	public function onDamageByPlayer(EntityDamageEvent $ev){
 		// To Noob Developers: If you don't know what this part mean basically it's where if you get hit by a friend it will just block the damage and it will send an message.
 		$cause = $ev->getCause();
@@ -46,7 +46,7 @@ class Main extends PluginBase implements Listener{
 			$config->save();
 		}
 	}
-	// Commmands for FriendsSystem
+	// Commmands for FriendSystemPE
 	public function onCommand(CommandSender $sender,Command $command, $label,array $args){
 		switch($command->getName()){
 			// Main Command
@@ -133,7 +133,7 @@ class Main extends PluginBase implements Listener{
 		}
 	}
 	
-	// API for FriendsSystem
+	// API for FriendSystemPE
 	public function addRequest(Player $target,Player $requestp){
 		// To Noob Developers: This right here will trigger a request. If the request is not accepted in 10 secs(20 * 10 20 ticks is 1 sec), The request will be canceled.
 		if (!$this->isFriend($requestp, $target->getName())){
@@ -181,7 +181,7 @@ class Main extends PluginBase implements Listener{
 		}
 		return false;
 	}
-	
+	// To Noob Developers: If you look in the code it says like "if($this->isFriend($player, $atkr->getName())){", Well that means if that is your friend you cannot damage him! Thats what it means.
 	public function isFriend(Player $player, $isfriendname){
 		$config = new Config($this->getDataFolder()."players/". strtolower($player->getName()).".yml", Config::YAML);
 		$array = $config->get("friends", []);
