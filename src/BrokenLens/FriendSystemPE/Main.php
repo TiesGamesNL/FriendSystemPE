@@ -74,19 +74,19 @@ class Main extends PluginBase implements Listener{
 						}
 					break;
 					// Remove Command
-					case "remove":
-						if ($sender->hasPermission("friend.remove")){
-						if (isset($args[1])){
-							if ($this->removeFriend($sender, $args[1])){
-								$sender->sendMessage("Friend removed");
-							}else{
-								$sender->sendMessage("Friend not found do /friend list \n to list your friends");
-							}
-						}
-						return ;
-						}else{
-							$sender->sendMessage(TextFormat::RED."You do not have permission for that command");
-						}
+					//case "remove":
+						//if ($sender->hasPermission("friend.remove")){
+						//if (isset($args[1])){
+							//if ($this->removeFriend($sender, $args[1])){
+								//$sender->sendMessage("Friend removed");
+							//}else{
+								//$sender->sendMessage("Friend not found do /friend list \n to list your friends");
+							//}
+						//}
+						//return ;
+						//}else{
+							//$sender->sendMessage(TextFormat::RED."You do not have permission for that command");
+						//}
 					break;
 					// List Command
 					case "list":
